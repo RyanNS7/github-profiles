@@ -7,7 +7,10 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: red;
+    background: ${props => !props.dark ? '#8257E5' : 'black'};
+
+    /* --base-color: #8257E5;
+    --background-note: #5B00F9; */
 
     img{
         width: 6rem;
@@ -63,7 +66,13 @@ export const ThemeButton = styled.div`
         height: 100%;
         border-radius: 5rem;
         cursor: pointer;
-        border: transparent;
-        background: blue;
+        border: 1px solid ${props => !props.dark ? 'transparent' : 'black'};
+        background: ${props => !props.dark ? '#8257E5' : '#e0e0e0'};
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 5rem;
     }
 `
