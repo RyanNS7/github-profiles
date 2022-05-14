@@ -5,7 +5,7 @@ import iconDark from '../../assets/dark-mode.png'
 import iconLight from '../../assets/light-mode.png'
 import searchIcon from '../../assets/icon-search.png'
 
-function Header(props){
+export function Header(props){
 
     return (
         <HeaderContainer dark={props.dark}>
@@ -25,6 +25,3 @@ function Header(props){
         </HeaderContainer>
     )
 }
-
-
-export default Header
