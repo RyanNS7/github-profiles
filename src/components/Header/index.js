@@ -7,13 +7,21 @@ import searchIcon from '../../assets/icon-search.png'
 
 export function Header(props){
 
+    async function userData(e){
+        e.preventDefault()
+
+        const profile = await fetch('https://api.github.com/users/ryanns7')
+        const data = await profile.json()
+        console.log(data)
+    }
+
     return (
         <HeaderContainer dark={props.dark}>
             <img src={!props.dark ? LogoLight : LogoDark} alt='Logo Github'/>                
 
             <form>
                 <input type='text' placeholder='Github Profile'/>
-                <button className='submit'><img src={searchIcon} alt='search' /></button>
+                <button className='submit' onClick={userData}><img src={searchIcon} alt='search' /></button>
             </form>
 
             <ThemeButton dark={props.dark}>
