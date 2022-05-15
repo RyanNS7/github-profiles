@@ -5,9 +5,9 @@ export function Main(props){
     return(
         <ContainerMain dark={props.dark}>
             <AvatarProfile dark={props.dark}>
-                <div><h3>Name User</h3></div>
-                <img src={avatarGithub} alt='Avatar' />
-                <div><h3>Avatar</h3></div>
+                <div><h3>{props.user.name}</h3></div>
+                <img src={props.avatar_url} alt='Avatar' />
+                <div><h3>{props.user.login}</h3></div>
             </AvatarProfile>
 
             <NewestRepositories dark={props.dark}>
@@ -22,8 +22,8 @@ export function Main(props){
             </NewestRepositories>
 
             <LatestInformation dark={props.dark}>
-            <h4>Followers: 59</h4>
-            <h4>Repositories count: 58</h4>
+            <h4>Followers: {props.user.followers}</h4>
+            <h4>Repositories count: {props.user.public_repos}</h4>
             </LatestInformation>
         </ContainerMain>
     )

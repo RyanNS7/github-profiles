@@ -4,15 +4,26 @@ import LogoDark from '../../assets/logo-dark.png'
 import iconDark from '../../assets/dark-mode.png'
 import iconLight from '../../assets/light-mode.png'
 import searchIcon from '../../assets/icon-search.png'
+import { useState } from 'react'
 
 export function Header(props){
+
+    const [githubProfile, setGithubProfile] = useState('')
+
+    function usernameGithub(e){
+        setGithubProfile(e.target.value)
+    }
 
     async function userData(e){
         e.preventDefault()
 
-        const profile = await fetch('https://api.github.com/users/ryanns7')
+        const profile = await fetch(`https://api.github.com/users/${githubProfile}`)
         const data = await profile.json()
-        console.log(data)
+        props.setUser(data)
+
+        const response = await fetch(data.repos_url)
+        const dataRepositories = await response.json()
+        props.setRepositories(dataRepositories)
     }
 
     return (
@@ -20,7 +31,7 @@ export function Header(props){
             <img src={!props.dark ? LogoLight : LogoDark} alt='Logo Github'/>                
 
             <form>
-                <input type='text' placeholder='Github Profile'/>
+                <input type='text' placeholder='Github Profile' onChange={usernameGithub}/>
                 <button className='submit' onClick={userData}><img src={searchIcon} alt='search' /></button>
             </form>
 
