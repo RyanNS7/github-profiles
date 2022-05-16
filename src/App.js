@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import GlobalStyles from "./styles/GlobalStyles";
 import {Header} from "./components/Header";
 import {Main} from "./components/Main"
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div> 
-      <GlobalStyles />
+      <GlobalStyles dark={dark}/>
 
       <Header switchTheme={switchTheme} dark={dark} setUser={setUser} setRepositories={setRepositories}/>
 

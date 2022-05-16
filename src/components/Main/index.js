@@ -2,11 +2,12 @@ import { ContainerMain, AvatarProfile, NewestRepositories, LatestInformation } f
 import avatarGithub from "../../assets/avatar.png"
 
 export function Main(props){
+    console.log(props.user)
     return(
         <ContainerMain dark={props.dark}>
             <AvatarProfile dark={props.dark}>
                 <div><h3>{props.user.name}</h3></div>
-                <img src={props.avatar_url} alt='Avatar' />
+                <img src={avatarGithub} alt='Avatar' />
                 <div><h3>{props.user.login}</h3></div>
             </AvatarProfile>
 
@@ -14,10 +15,9 @@ export function Main(props){
                 <div><h2>Newest Repositories</h2></div>
 
                 <div>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
-                    <p>a</p>
+                    {props.repositories.slice(0, 4).map((repo)=> {
+                        return <p><a href={repo.html_url}>{repo.name}</a></p>
+                    })}
                 </div>
             </NewestRepositories>
 

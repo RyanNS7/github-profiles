@@ -31,9 +31,11 @@ export const NewestRepositories = styled(AvatarProfile)`
         font-weight: bolder;
     }
 
-    /* div:nth-child(2){
-        display: flex;
-    } */
+    a{
+        text-decoration: none;
+        color: ${props => !props.dark ? 'black' : 'white'};
+        font-weight: bolder;
+    }
 `
 
 export const LatestInformation = styled.div`
