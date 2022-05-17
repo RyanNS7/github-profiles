@@ -5,12 +5,13 @@ import {Main} from "./components/Main"
 
 function App() {
 
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(sessionStorage.getItem('themePage') ? JSON.parse(sessionStorage.getItem('themePage')): false)
   const [user, setUser] = useState([])
   const [repositories, setRepositories] = useState([])
 
   function switchTheme(){
     setDark(!dark)
+    sessionStorage.setItem('themePage', JSON.stringify(!dark))
   }
 
   return (
