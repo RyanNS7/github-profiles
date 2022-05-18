@@ -20,7 +20,7 @@ function App() {
 
       <Header switchTheme={switchTheme} dark={dark} setUser={setUser} setRepositories={setRepositories}/>
 
-      <Main switchTheme={switchTheme} dark={dark} user={user} repositories={repositories}/>
+      {user.length !== 0 && <Main switchTheme={switchTheme} dark={dark} user={user} repositories={repositories}/>}
     </div>
   );
 }

@@ -9,9 +9,6 @@ export const HeaderContainer = styled.div`
     align-items: center;
     background: ${props => !props.dark ? '#8257E5' : 'black'};
 
-    /* --base-color: #8257E5;
-    --background-note: #5B00F9; */
-
     img{
         width: 6rem;
         border-radius: 5rem;
@@ -51,6 +48,35 @@ export const HeaderContainer = styled.div`
         width: 80%;
     }
 
+    @media screen and (max-width: 500px){
+        height: 12rem;
+
+        .logo img{
+            width: 4rem;
+            position: absolute;
+            right: 70%;
+            top: 4%;
+        }
+
+        form{
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            top: 18%;
+        }
+
+        input{
+            width: 70%;
+        }
+        .submit{
+            width: 30%;
+        }
+
+        .submit img{
+            width: 50%;
+        }
+    }
+
 `
 
 export const ThemeButton = styled.div`
@@ -74,5 +100,11 @@ export const ThemeButton = styled.div`
         width: 100%;
         height: 100%;
         border-radius: 5rem;
+    }
+
+    @media screen and (max-width: 500px){
+        position: absolute;
+        left: 70%;
+        top: 4%;
     }
 `

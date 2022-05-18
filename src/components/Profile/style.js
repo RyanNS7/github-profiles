@@ -31,6 +31,10 @@ export const NewestRepositories = styled(AvatarProfile)`
         color: ${props => !props.dark ? 'black' : 'white'};
         font-weight: bolder;
     }
+    
+    p{
+        margin-bottom: 0.6rem;
+    }
 `
 
 export const LatestInformation = styled.div`
@@ -39,6 +43,7 @@ export const LatestInformation = styled.div`
     display: flex;
     justify-content: center;
     color: ${props => !props.dark ? 'black' : 'white'};
+    padding-bottom: 0.2rem;
 
     h4{
         margin: 0 1rem;

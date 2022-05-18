@@ -1,11 +1,11 @@
 import { ContainerMain} from "./style";
 import { Profile } from "../Profile";
+import { NotFound } from "../NotFound";
 
 export function Main(props){
-    console.log(props.user.message)
     return(
         <ContainerMain dark={props.dark}>
-            {props.user.message !== 'Not Found' ? <Profile dark={props.dark} user={props.user} repositories={props.repositories} /> : <p>Ninguem</p>}
+            {props.user.message === undefined ? <Profile dark={props.dark} user={props.user} repositories={props.repositories} /> : <NotFound dark={props.dark}/>}
         </ContainerMain>
     )
 }

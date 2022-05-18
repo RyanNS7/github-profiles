@@ -14,7 +14,7 @@ export function Profile(props){
 
                 <div>
                     {props.repositories.slice(0, 4).map((repo)=> {
-                        return <p><a href={repo.html_url}>{repo.name}</a></p>
+                        return <p key={repo.name}><a href={repo.html_url}>{repo.name}</a></p>
                     })}
                 </div>
             </NewestRepositories>

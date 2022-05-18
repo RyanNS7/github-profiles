@@ -28,7 +28,10 @@ export function Header(props){
 
     return (
         <HeaderContainer dark={props.dark}>
-            <img src={!props.dark ? LogoLight : LogoDark} alt='Logo Github'/>                
+            <div className='logo'>
+                <img src={!props.dark ? LogoLight : LogoDark} alt='Logo Github'/>       
+            </div>
+                         
 
             <form>
                 <input type='text' placeholder='Github Profile' onChange={usernameGithub}/>
