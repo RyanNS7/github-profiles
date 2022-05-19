@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle} from "styled-components";
 
 export default createGlobalStyle`
     *{
@@ -14,4 +14,9 @@ export default createGlobalStyle`
             outline: 0;
         } 
     }
+`
+
+export const Container = styled.div`
+    height: 100vh;
+    background: ${props => !props.dark ? 'white' : '#0F0C0C'};
 `

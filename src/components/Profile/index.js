@@ -1,6 +1,7 @@
 import { AvatarProfile, NewestRepositories, LatestInformation } from "./style";
 
 export function Profile(props){
+
     return(
         <>
         <AvatarProfile dark={props.dark}>
@@ -10,7 +11,7 @@ export function Profile(props){
             </AvatarProfile>
 
             <NewestRepositories dark={props.dark}>
-                <div><h2>Newest Repositories</h2></div>
+                <div><h2>Some User Repositories</h2></div>
 
                 <div>
                     {props.repositories.slice(0, 4).map((repo)=> {

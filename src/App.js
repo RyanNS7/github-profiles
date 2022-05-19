@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import GlobalStyles from "./styles/GlobalStyles";
+import GlobalStyles, { Container } from "./styles/GlobalStyles";
 import {Header} from "./components/Header";
 import {Main} from "./components/Main"
 
@@ -15,13 +15,13 @@ function App() {
   }
 
   return (
-    <div> 
+    <Container dark={dark}> 
       <GlobalStyles dark={dark}/>
 
       <Header switchTheme={switchTheme} dark={dark} setUser={setUser} setRepositories={setRepositories}/>
 
       {user.length !== 0 && <Main switchTheme={switchTheme} dark={dark} user={user} repositories={repositories}/>}
-    </div>
+    </Container>
   );
 }
 
