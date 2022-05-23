@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState} from "react"
 import GlobalStyles, { Container } from "./styles/GlobalStyles";
 import {Header} from "./components/Header";
 import {Main} from "./components/Main"
